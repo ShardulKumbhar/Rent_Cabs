@@ -1,0 +1,52 @@
+/* src/pages/CarsPage.css */
+.cars-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .cars-page h2 {
+    font-size: 2rem;
+    color: #0e1c36;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cars-page p {
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .car-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .car-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 250px;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .car-info {
+    padding: 1rem;
+  }
+  
+  .enquire-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #00c77b;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
