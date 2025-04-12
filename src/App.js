@@ -7,6 +7,7 @@ import Cars from './pages/Cars';
 import Bikes from './pages/Bikes';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import CarsPage from './pages/CarsPage'; 
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div style={{ padding: "20px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
+         
           <Route path="/cars" element={<Cars />} />
           <Route path="/bikes" element={<Bikes />} />
           <Route path="/services" element={<Services />} />
