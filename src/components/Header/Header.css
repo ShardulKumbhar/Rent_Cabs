@@ -1,0 +1,54 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 1px ;
+    /* border: 1px solid black; */
+    
+  }
+  
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 3px;
+  }
+  
+  .logo .green {
+    color: #00C389; 
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav li:hover {
+    color: #00C389;
+  }
+  
+
+  .nav .active {
+    color: #00C389;
+    font-weight: 600;
+  }
+  
