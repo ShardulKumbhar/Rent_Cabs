@@ -60,7 +60,7 @@ Drop-off: ${dropoffDate} at ${dropoffTime}
 Number of Days: ${daysBooked} day(s)
 `;
 
-    const whatsappNumber = "7709125030"; // Replace with your number
+    const whatsappNumber = "7709125030"; 
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
