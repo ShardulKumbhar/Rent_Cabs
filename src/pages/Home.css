@@ -1,0 +1,116 @@
+/* src/pages/Home.css */
+.home-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, #e0f7fa, #ffffff, #e3f2fd);
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .book-now-button {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0277bd;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-now-button:hover {
+    background-color: #01579b;
+  }
+  
+  .arrow-icon {
+    margin-left: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .feature-highlights {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .feature-card {
+    background-color: #f0f4f8;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .feature-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .promo-banner {
+    background-color: #0277bd;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .promo-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .promo-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .start-booking-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #0277bd;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-booking-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .footer {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  

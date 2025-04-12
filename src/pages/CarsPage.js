@@ -1,7 +1,7 @@
 // src/pages/CarsPage.js
 import React, { useState } from 'react';
 import CarCard from '../components/CarCard';
-import BookingFormModal from '../components/BookingFormModal';
+import BookingFormModal from '../pages/BookingFormModal';
 import './CarsPage.css';
 
 const CarsPage = () => {

@@ -1,0 +1,85 @@
+/* src/components/OurServices.css */
+.services-container {
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #f7f9fb, #eef3f7);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .blue{
+    color: rgb(104, 104, 255);
+  }
+  
+  .services-container h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #3498db;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 6px;
+    background: #3498db;
+    left: 0;
+    top: 0;
+  }
+  
+  .service-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .service-card p {
+    color: #666;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .services-container h2 {
+      font-size: 2rem;
+    }
+  
+    .intro-text {
+      font-size: 1rem;
+    }
+  
+    .service-card {
+      padding: 1.5rem;
+    }
+  }
+  

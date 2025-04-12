@@ -1,12 +1,12 @@
 // src/pages/Contact.js
-import React, { useState } from 'react';
-import './Contact.css';
+import React, { useState } from "react";
+import "./Contact.css";
 
 const Contact = () => {
   const [form, setForm] = useState({
-    name: '',
-    phone: '',
-    message: '',
+    name: "",
+    phone: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -18,13 +18,16 @@ const Contact = () => {
     const fullMessage = `Hi, my name is ${name}. Contact: ${phone}. Message: ${message}`;
     const encodedMessage = encodeURIComponent(fullMessage);
     const whatsappURL = `https://wa.me/7709125030?text=${encodedMessage}`; // Replace with your number
-    window.open(whatsappURL, '_blank');
+    window.open(whatsappURL, "_blank");
   };
 
   return (
     <div className="contact-container">
       <h2>Contact Us</h2>
-      <p>Feel free to reach out for booking or general inquiries. We're happy to help!</p>
+      <p>
+        Feel free to reach out for booking or general inquiries. We're happy to
+        help!
+      </p>
       <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
         <input
           name="name"
