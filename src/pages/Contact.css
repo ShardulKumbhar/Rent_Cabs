@@ -1,37 +1,113 @@
-/* src/pages/Contact.css */
-.contact-container {
-    padding: 2rem;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .contact-form {
-    display: flex;
+.contact-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Left side with info + map */
+.contact-left {
+  flex: 1;
+  background-color: #4b3570;
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.map-container {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Right side with form */
+.contact-right {
+  flex: 2;
+  background-color: #f8f8f8;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-right h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.styled-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.styled-contact-form input,
+.styled-contact-form textarea {
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 240px;
+  background-color: white;
+}
+
+.styled-contact-form textarea {
+  resize: vertical;
+}
+
+.styled-contact-form button {
+  background-color: #4b3570;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-start;
+  transition: background 0.3s ease;
+}
+
+.styled-contact-form button:hover {
+  background-color: #3a2b5d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-wrapper {
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
   }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+
+  .contact-left,
+  .contact-right {
+    padding: 30px 20px;
   }
-  
-  .contact-form button {
-    background-color: #25d366;
-    color: white;
-    padding: 0.75rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 6px;
+
+  .form-row {
+    flex-direction: column;
   }
-  
-  .contact-form button:hover {
-    background-color: #1ebc5b;
-  }
-  
+}

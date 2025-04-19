@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./BookingFormModal.css";
 import { FaTimes, FaCar } from "react-icons/fa";
 
-const BookingFormModal = ({ vehicleName = "", onClose }) => {
+const BookingFormModal = ({ vehicleName = "", vehiclePrice = 0, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -14,7 +14,19 @@ const BookingFormModal = ({ vehicleName = "", onClose }) => {
     dropoffTime: "",
   });
 
-  const [daysBooked, setDaysBooked] = useState(0); // New state for number of days
+  const [daysBooked, setDaysBooked] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // State to store phone validation error
+  const [phoneError, setPhoneError] = useState("");
+
+  // Phone number validation function
+  const validatePhoneNumber = (phone) => {
+    // Remove non-digit characters (spaces, dashes, etc.)
+    const cleanedPhone = phone.replace(/\D/g, "");
+    const phonePattern = /^[0-9]{10}$/; // Validates a 10-digit phone number
+    return phonePattern.test(cleanedPhone);
+  };
 
   useEffect(() => {
     if (formData.pickupDate && formData.dropoffDate) {
@@ -22,16 +34,32 @@ const BookingFormModal = ({ vehicleName = "", onClose }) => {
       const dropoff = new Date(formData.dropoffDate);
 
       const timeDifference = dropoff - pickup;
-      const dayDifference = timeDifference / (1000 * 3600 * 24); // Convert milliseconds to days
+      const dayDifference = timeDifference / (1000 * 3600 * 24);
       setDaysBooked(dayDifference);
+      setTotalPrice(dayDifference * vehiclePrice);
     }
-  }, [formData.pickupDate, formData.dropoffDate]);
+  }, [formData.pickupDate, formData.dropoffDate, vehiclePrice]);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handlePhoneChange = (e) => {
+    const { value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+
+    // Validate phone number
+    if (!validatePhoneNumber(value)) {
+      setPhoneError("Please enter a valid 10-digit phone number.");
+    } else {
+      setPhoneError("");
+    }
   };
 
   const handleSubmit = (e) => {
@@ -58,9 +86,10 @@ Drop-off Location: ${dropoffLocation}
 Pick-up: ${pickupDate} at ${pickupTime}
 Drop-off: ${dropoffDate} at ${dropoffTime}
 Number of Days: ${daysBooked} day(s)
+Total Price: ₹${totalPrice}
 `;
 
-    const whatsappNumber = "7709125030"; 
+    const whatsappNumber = "7709125030";
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
@@ -89,15 +118,27 @@ Number of Days: ${daysBooked} day(s)
               required
             />
           </div>
-
-          <div className="form-group">
+          <div>
             <label>Phone Number</label>
             <input
               type="tel"
+              inputMode="numeric"
+              pattern="\d*"
               name="phone"
               placeholder="Your phone number"
               value={formData.phone}
-              onChange={handleChange}
+              onChange={handlePhoneChange}
+              onKeyDown={(e) => {
+                if (
+                  !/[0-9]/.test(e.key) &&
+                  e.key !== "Backspace" &&
+                  e.key !== "Delete" &&
+                  e.key !== "ArrowLeft" &&
+                  e.key !== "ArrowRight"
+                ) {
+                  e.preventDefault();
+                }
+              }}
               required
             />
           </div>
@@ -179,14 +220,15 @@ Number of Days: ${daysBooked} day(s)
 
           <div className="form-group">
             <label>Days Booked</label>
-            <input
-              type="text"
-              value={daysBooked}
-              readOnly
-            />
+            <input type="text" value={daysBooked} readOnly />
           </div>
 
-          <button type="submit" className="submit-btn">
+          <div className="form-group">
+            <label>Total Price</label>
+            <input type="text" value={`₹${totalPrice}`} readOnly />
+          </div>
+
+          <button type="submit" className="submit-btn" disabled={phoneError}>
             Submit
           </button>
         </form>

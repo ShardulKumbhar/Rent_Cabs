@@ -15,19 +15,19 @@ const Header = () => {
       <nav className="nav">
         <ul>
           <li>
-            <NavLink to="/" end>
+            <NavLink to="/" end style={{ textDecoration: "none" }}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/cars">Cars</NavLink>
+            <NavLink to="/cars" style={{ textDecoration: "none" }}>Cars</NavLink>
           </li>
           {/* <li><NavLink to="/bikes">Bikes</NavLink></li> */}
           <li>
-            <NavLink to="/services">Services</NavLink>
+            <NavLink to="/services" style={{ textDecoration: "none" }}>Services</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" style={{ textDecoration: "none" }}>Contact</NavLink>
           </li>
         </ul>
       </nav>

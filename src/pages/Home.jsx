@@ -1,23 +1,30 @@
 // src/pages/Home.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Home.css"; // Import the CSS file for styling
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleBookNowClick = () => {
+    navigate("/cars");
+  };
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <div className="hero-section">
-        <h1 className="hero-title">
-          Rent Your Dream Car <br /> Anytime, Anywhere
-        </h1>
-        <p className="hero-description">
-          Choose from a wide range of well-maintained cars at unbeatable prices.
-          Hassle-free booking. 24x7 support. Trusted by thousands.
-        </p>
-        <button className="book-now-button">
-          Book Now <span className="arrow-icon">→</span>
-        </button>
-      </div>
+    {/* Hero Section */}
+    <div className="hero-section">
+      <h1 className="hero-title">
+        Rent Your Dream Car <br /> Anytime, Anywhere
+      </h1>
+      <p className="hero-description">
+        Choose from a wide range of well-maintained cars at unbeatable prices.
+        Hassle-free booking. 24x7 support. Trusted by thousands.
+      </p>
+      <button className="book-now-button" onClick={handleBookNowClick}>
+        Book Now <span className="arrow-icon">→</span>
+      </button>
+    </div>
 
       {/* Feature Highlights */}
       <div className="feature-highlights">
@@ -48,7 +55,7 @@ function Home() {
         <p className="promo-description">
           Use code <strong>RIDE10</strong> at checkout
         </p>
-        <button className="start-booking-button">Start Booking</button>
+        <button className="start-booking-button" onClick={handleBookNowClick}>Start Booking</button>
       </div>
 
       {/* Footer */}

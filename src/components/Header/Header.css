@@ -1,54 +1,100 @@
-
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 1px ;
-    /* border: 1px solid black; */
-    
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #0f172a;
-    letter-spacing: 3px;
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 3px;
+}
+
+.logo .green {
+  color: #00C389;
+}
+
+/* NAV DESKTOP VIEW */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  font-size: 18px;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav li:hover {
+  color: #00C389;
+}
+
+.nav .active {
+  color: #00C389;
+  font-weight: 600;
+}
+
+/* BURGER MENU */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #111;
+  transition: 0.3s ease;
+}
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
   }
-  
-  .logo .green {
-    color: #00C389; 
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 200px;
+    padding: 1rem;
   }
-  
+
   .nav ul {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    gap: 16px;
   }
-  
-  .nav li {
-    font-size: 18px;
-    font-weight: 500;
-    color: #111827;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .nav li:hover {
-    color: #00C389;
-  }
-  
 
-  .nav .active {
-    color: #00C389;
-    font-weight: 600;
+  .nav.show {
+    display: flex;
+    flex-direction: column;
   }
-  
+
+  .burger {
+    display: flex;
+  }
+}
