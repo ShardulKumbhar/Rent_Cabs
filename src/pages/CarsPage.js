@@ -30,6 +30,13 @@ const CarsPage = () => {
       category: 'Hatchback',
     },
     {
+      name: 'i20',
+      type: 'manual',
+      price: 1499,
+      image: 'https://trident-group.s3.ap-south-1.amazonaws.com/hyundai/models/colors/1698928859.png',
+      category: 'Hatchback',
+    },
+    {
       name: 'Innova Crysta',
       type: 'manual',
       price: 3000,
@@ -53,8 +60,8 @@ const CarsPage = () => {
     {
       name: 'IGNIS',
       type: 'manual',
-      price: 2500,
-      image: 'https://vstcentral-kia.in/assert/images/carexteriorimages/930x620/Kia/Carens/8424/1639715612993/front-left-side-47.jpg',
+      price: 1099,
+      image: 'https://5.imimg.com/data5/SW/SX/KZ/GLADMIN-80604161/img-1.png',
       category: 'Hatchback',
     },
   ];

@@ -22,7 +22,6 @@ const BookingFormModal = ({ vehicleName = "", vehiclePrice = 0, onClose }) => {
 
   // Phone number validation function
   const validatePhoneNumber = (phone) => {
-    // Remove non-digit characters (spaces, dashes, etc.)
     const cleanedPhone = phone.replace(/\D/g, "");
     const phonePattern = /^[0-9]{10}$/; // Validates a 10-digit phone number
     return phonePattern.test(cleanedPhone);
@@ -141,6 +140,7 @@ Total Price: ₹${totalPrice}
               }}
               required
             />
+            {phoneError && <p className="error">{phoneError}</p>}
           </div>
 
           <div className="vehicle-info">

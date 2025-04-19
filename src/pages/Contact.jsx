@@ -10,7 +10,15 @@ const Contact = () => {
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    // Ensure only numeric input for phone number and limit to 10 digits
+    if (e.target.name === "phone") {
+      const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+      if (value.length <= 10) {
+        setForm({ ...form, [e.target.name]: value });
+      }
+    } else {
+      setForm({ ...form, [e.target.name]: e.target.value });
+    }
   };
 
   const handleWhatsAppRedirect = () => {
@@ -46,8 +54,6 @@ const Contact = () => {
         />
       </div>
 
-      {/* <div style="position: relative;"><div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Akshay+Taxi+%26+Car+Bike+Rental+Service&output=embed"></iframe></div><a href="http://aiyoutubetitlegenerator.com/" rel="noopener" target="_blank" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">aiyoutubetitlegenerator.com</a></div> */}
-
       {/* Right panel - Form */}
       <div className="contact-right">
         <h3>
@@ -74,6 +80,7 @@ const Contact = () => {
               placeholder="Your Phone"
               value={form.phone}
               onChange={handleChange}
+              maxLength="10"  // Restrict input length to 10 characters
               required
             />
           </div>
